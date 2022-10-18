@@ -1,0 +1,34 @@
+docker --version
+docker pull busybox
+docker pull rocker/verse
+docker images
+
+docker login --username=surabhi2000
+docker tag 
+docker push 
+
+
+node
+1. Create the notepad file and add the below code and save it as server.js:
+var http = require("http");
+http.createServer(function(req,res)
+{
+res.writeHead(200,{'Content-Type':'text/html'});
+res.end('Hello World!');
+}).listen(8081);
+
+1. First create the module that returns the date using below code (save as 
+myfirstmodule.js):
+exports.myDateTime = function()
+{
+return Date();
+};
+
+2. For main program code datetime.js
+var http = require('http');
+var dt = require('./myfirstmodule');
+http.createServer(function (req, res){
+res.writeHead (200,{'Content-Type':'text/html'});
+res.write("The date and time are currently:" +dt.myDateTime());
+res.end();
+}).listen(8081);
