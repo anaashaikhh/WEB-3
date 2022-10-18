@@ -1,0 +1,44 @@
+A. Your First Solidity Smart Contract (Counter Program)
+1. Go to https://remix.ethereum.org/  after that click on “create new file” in default workspace session and create the file name counter.sol and add below given code.
+
+pragma solidity ^0.6.12;
+contract Counter {
+    uint count;
+    constructor() public {
+        count = 0;
+    }
+    function getCount() public view returns(uint) {
+        return count;
+    }
+    function incrementCount() public {
+        count = count + 1;
+    }
+    function reset() public {
+        count = 0;
+    }
+}
+
+
+B. To Create and Explore Types of Variables with Varying Data Types in Solidity Programming.
+(Variables)
+File name: variable.sol
+
+pragma solidity ^0.6.12;
+contract Counter {
+    string public myString ="welcome";
+    bytes32 public myBytes32 = "hello how are you?";
+    int public myint = 4;
+    uint public myUint = 15;
+    uint256 public myUint256 = 2001;
+    uint8 public myUint8 = 1;
+    address public myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    function getValue() public pure returns (uint) {
+        uint value = 22;
+        return value;
+    }
+    struct MyStruct {
+        uint myUint;
+        string myString;
+    }
+    MyStruct public myStruct = MyStruct(15,"Lara");
+}
